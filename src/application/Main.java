@@ -12,6 +12,9 @@ import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
+	
+	private static Scene scene;
+	
 	@Override
 	public void start(Stage stage) {
 		try {
@@ -21,7 +24,7 @@ public class Main extends Application {
 			scrollPane.setFitToHeight(true);
 			scrollPane.setFitToWidth(true);
 			
-			Scene scene = new Scene(scrollPane);
+			scene = new Scene(scrollPane);
 			stage.setScene(scene);
 			stage.setTitle("Scena do Projeto JavaFX com JDBC");
 			stage.show();
@@ -29,6 +32,10 @@ public class Main extends Application {
 		catch (IOException e) {
 		e.printStackTrace();
 		}
+	}
+	
+	public static Scene getScene() {
+		return scene;
 	}
 	
 	public static void main(String[] args) {
